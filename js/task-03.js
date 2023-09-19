@@ -14,9 +14,10 @@ const images = [
 ];
 
 const ul = document.querySelector(".gallery");
-const htmlString = images.map(({url, alt}) => 
-  `<li><img src="${url}" alt="${alt}"></li>`
-).join("");
+const htmlString = images.map(({ url, alt }) =>
+  `<li class="gallery-item"><img src="${url}" alt="${alt}" width=700></li>`
+);
+// .join("") не знадобився. Відмалювало сторінку і без нього. Хм?
 
 ul.insertAdjacentHTML("afterbegin", htmlString);
 
