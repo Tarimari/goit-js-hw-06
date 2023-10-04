@@ -18,16 +18,16 @@ function createBoxes(amount) {
   else { lastId = Number(box.lastElementChild.id) };
 
   for (let i = 1; i <= amount; i++) {
-    arr.push(`<div class="boxes" id="${i + lastId}"></div>`)
+    arr.push(`<div class="js-boxes" id="${i + lastId}"></div>`)
   };
 console.dir(typeof(arr.join("")));
 
   box.insertAdjacentHTML("beforeend", arr.join(""));
-  const cubs = document.querySelectorAll(`.boxes`);
+  const cubs = document.querySelectorAll(`.js-boxes`);
 
   cubs.forEach((cub) => {
-    cub.style.width = `${Number(cub.id) + 10}px`;
-    cub.style.height = `${Number(cub.id) + 10}px`;
+    cub.style.width = `${Number(cub.id) * 10 + 20}px`;
+    cub.style.height = `${Number(cub.id) * 10 + 20}px`;
     cub.style.backgroundColor = getRandomHexColor();
   });
   console.dir(document.querySelectorAll(`.boxes`));
